@@ -4,13 +4,13 @@ const URL = "https://api.spoonacular.com/recipes/complexSearch";
 const API_KEY = "ee61b00570c84c748284a6e34a6bb798";
 
 export default function Search({ foodData, setFoodData }) {
-  const [query, setQuery] = useState("Pizza");
+  const [query, setQuery] = useState("Pizza"); //This state use to change item we inter in inpur search bar.
   useEffect(() => {
     async function fetchFood() {
       const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
       const data = await response.json();
       console.log(data.results);
-      setFoodData(data.results);
+      setFoodData(data.results); //It put all data result on array....setData function perform or put some change on foodData variable in
     }
     fetchFood();
   }, [query]);
