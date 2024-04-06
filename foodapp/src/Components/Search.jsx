@@ -3,7 +3,7 @@ import styles from "./search.module.css";
 
 const URL = "https://api.spoonacular.com/recipes/complexSearch";
 //const API_KEY = process.env.REACT_APP_API_KEY;
-const API_KEY = "ee61b00570c84c748284a6e34a6bb798";
+const API_KEY = "54f1ccbf21df4f348a6a076045358f1c";
 export default function Search({ foodData, setFoodData }) {
   const [query, setQuery] = useState("Pizza"); //This state use to change item we inter in inpur search bar.
   useEffect(() => {

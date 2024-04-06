@@ -9,14 +9,14 @@ import FoodDetails from "./components/FoodDetails";
 
 export default function App() {
   const [foodData, setFoodData] = useState([]);
-  const [foodId, setFoodId] = useState("");
+  const [foodId, setFoodId] = useState("656329");
   return (
     <div>
       <Navbar />
       <Search foodData={foodData} setFoodData={setFoodData} />
       <Contaner>
         {/* Now Contaner is parent Component and inside contaner we create innercontaner
-         as childern and inside innercontaner there is FoodList as Children */}
+         as childern and inside innercontaner there is FoodList as innercontaner Children(also can say nested component) */}
         <InnerContaner>
           <FoodList foodData={foodData} setFoodId={setFoodId} />
         </InnerContaner>
