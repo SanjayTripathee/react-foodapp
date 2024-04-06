@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import styles from "./fooddetails.module.css";
+import IngredentsList from "./IngredentsList";
 
 export default function FoodDetails({ foodId }) {
   const [food, setFood] = useState({});
   const [isLoding, setIsLoding] = useState(true);
   const URL = ` https://api.spoonacular.com/recipes/${foodId}/information`;
-  const API_KEY = "919dd7f3c63a4b8a840bc2844d91df8a";
+  const API_KEY = process.env.REACT_APP_API_KEY;
   useEffect(() => {
     async function fetchFood() {
       let response = await fetch(`${URL}?apiKey=${API_KEY}`);
@@ -36,6 +37,8 @@ export default function FoodDetails({ foodId }) {
             <strong>💲{food.pricePerServing / 100} Per serving</strong>
           </span>
         </div>
+
+        <IngredentsList food={food} isLoding={isLoding} />
 
         <h2>Instruction</h2>
         <div className={styles.recepiInstruction}>
